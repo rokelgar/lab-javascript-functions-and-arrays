@@ -25,30 +25,31 @@ function maxOfTwoNumbers(numberOne, numberTwo) {
 
 // Iteration #2: Find longest word
 
+
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord(array) {
+function findLongestWord(words) {
   let numberOfLetters1;
   let numberofWords1;
-  //let numberOfLetters2;
+  
   let maxnumberofLetters;
   let longestWord;
   let i;
 
-  longestWord = array[0];
-  maxnumberofLetters = array.length[0];
-  numberofWords1 = array.length;
+  longestWord = words[0];
+  maxnumberofLetters = words.length[0];
+  numberofWords1 = words.length;
 
-  if (array = "") {
-    console.log("There are no submitted words, please try again")
+  if (words.length == 0) {
+    console.log("There are no submitted words, please try again");
     return null;
   } else {
 
   for(i=1; i<numberofWords1; i++){
-    numberofLetters1 = array.length[i];
-    if (numberofLetters1>maxnumberofLetters){
+    numberOfLetters1 = words.length[i];
+    if (numberofLetters1 > maxnumberofLetters){
       maxnumberofLetters = numberOfLetters1;
-      longestWord = array[i];
+      longestWord = words[i];
     }
   }
   console.log("The longest word is", longestWord);
@@ -70,7 +71,7 @@ function sumNumbers(listofNumbers) {
 
   console.log("Insert the numbers, separated by commas");
 
-  if (listofNumbers = ""){
+  if (listofNumbers == ""){
     console.log("There are no submitted numbers, please try again")
     return sum;
 
@@ -139,17 +140,18 @@ const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating
 function doesWordExist(listofWords,searchedWord) {
   let i;
   let numberofWords;
+  let searchedWord;
   let foundWord = FALSE;
 
   numberofWords = listofWords.length;
 
-  if(listofWords = ""){
+  if(listofWords == ""){
     console.log("There are no submitted words, please try again")
     return null;
   }else{
     for(i=0; i<numberofWords; i++){
       if(searchedWord = listofWords[i]){
-        console.log("Congratulations, the following word has been found:" searchedWord);
+        console.log("Congratulations, the following word has been found:", searchedWord);
         foundWord = TRUE;
         return foundWord;
         break;
@@ -186,18 +188,18 @@ function howManyTimes(listofWords1, searchedWord1) {
   counter = 0;
   numberofWords2 = listofWords1.length;
 
-  if(listofWords = "" || searchedWord1 = ""){
+  if (numberofWords2 == 0 || searchedWord1 == ""){
     console.log("There are no submitted words, please try again")
     return null;
 
-  }else{
+  } else{
 
   for (i=0; i<numberofWords2; i++){
-    if (searchedWord1 = listofWords1[i]){
+    if (searchedWord1 == listofWords1[i]){
       counter++;      
     }
   }
-  console.log("The searched word appears", counter "times");
+  console.log("The searched word appears", counter, "times");
 return counter;
 }
 }
