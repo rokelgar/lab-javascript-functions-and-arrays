@@ -154,13 +154,19 @@ function uniquifyArray(listofWords2) {
   }
 
   for(i=1; i<numberofWords3; i++){
-    if(listofWords2[i]==testedValue){
+    if(listofWords2.includes==testedValue){
       positiveRepetition = true;
-      listofWords2 = listofWords2.slice[i,i];
-      numberofWords3--;
+      listofWords2 = listofWords2.slice[i,i+1];
+      numberofWords3=listofWords2.length;
     }
+    return listofWords2;
   }
-  
+
+  if (positiveRepetition = false){
+    console.log("There are no repeated elements in this list");
+    return listofWords2;
+  }
+
 }
 
 
