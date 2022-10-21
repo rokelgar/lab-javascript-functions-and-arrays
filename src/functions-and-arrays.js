@@ -153,6 +153,13 @@ function uniquifyArray(listofWords2) {
     return null;
   }
 
+  /*if (positiveRepetition = false){
+    console.log("There are no repeated elements in this list");
+    return listofWords2;
+  }*/
+
+  return [...new Set(listofWords2)];
+/*
   for(i=1; i<numberofWords3; i++){
     if(listofWords2.includes==testedValue){
       positiveRepetition = true;
@@ -161,11 +168,9 @@ function uniquifyArray(listofWords2) {
     }
     return listofWords2;
   }
+  */
 
-  if (positiveRepetition = false){
-    console.log("There are no repeated elements in this list");
-    return listofWords2;
-  }
+ 
 
 }
 
