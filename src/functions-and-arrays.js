@@ -62,7 +62,7 @@ function findLongestWord(words) {
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers(listofNumbers) {
+function sumNumbers(numbers) {
   let i;
   let numberofNumbers;
   let sum;
@@ -71,16 +71,16 @@ function sumNumbers(listofNumbers) {
 
   console.log("Insert the numbers, separated by commas");
 
-  if (listofNumbers == ""){
+  if (numbers == ""){
     console.log("There are no submitted numbers, please try again")
     return sum;
 
   } else{
 
-    numberofNumbers = listofNumbers.length;
+    numberofNumbers = numbers.length;
 
     for(i=0; i<numberofNumbers; i++){
-      sum = sum + listofNumbers[i];
+      sum = sum + numbers[i];
     }
     console.log("The sum of the numbers is", sum);
     return sum;  
@@ -101,8 +101,14 @@ const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 function averageNumbers(listofNumbers) {
   let average;
+
+  if(listofNumbers.length==0){
+    console.log("There are no submitted words, please try again");
+    return null;
+  } else{
    average = (sumNumbers(listofNumbers))/(listofNumbers.length);
    return average;
+  }
   
 }
 
@@ -130,37 +136,69 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(listofWords2) {
+
+  let testedValue;
+  let positiveRepetition;
+  let numberofWords3; 
+  let i;
+
+  positiveRepetition = false;
+  numberofWords3 = listofWords2.length;
+
+  testedValue=listofWords2[0];
+
+  if(numberofWords3==0){
+    console.log("There are no submitted words, please try again");
+    return null;
+  }
+
+  for(i=1; i<numberofWords3; i++){
+    if(listofWords2[i]==testedValue){
+      positiveRepetition = true;
+      listofWords2 = listofWords2.slice[i,i];
+      numberofWords3--;
+    }
+  }
+  
+}
 
 
 
 // Iteration #6: Find elements
+
+
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist(listofWords,searchedWord) {
-  let i;
-  let numberofWords;
-  let searchedWord;
-  let foundWord = FALSE;
+function doesWordExist(wordsFind,searchedWord) {
+  
+  let foundWord = false;
 
-  numberofWords = listofWords.length;
-
-  if(listofWords == ""){
-    console.log("There are no submitted words, please try again")
-    return null;
-  }else{
-    for(i=0; i<numberofWords; i++){
-      if(searchedWord = listofWords[i]){
-        console.log("Congratulations, the following word has been found:", searchedWord);
-        foundWord = TRUE;
-        return foundWord;
-        break;
-      }else{
-        return FALSE;
-      }
-    }
+  if(wordsFind.length == 0){
+    console.log("There are no submitted words, please try again");
+    return null;   
   }
+
+  if(wordsFind.length == 1){
+    return true;   
+  }
+    
+  if (wordsFind.includes(searchedWord)==true){
+    foundWord =true;
+    console.log("Congratulations, the following word has been found:", searchedWord);
+    return foundWord;
+
+  } else{
+    console.log("Sorry, the following word hasn´t been found:", searchedWord);
+    return foundWord;
+  }
+
 }
+      
+      
+
+
+
 
 
 
@@ -188,9 +226,9 @@ function howManyTimes(listofWords1, searchedWord1) {
   counter = 0;
   numberofWords2 = listofWords1.length;
 
-  if (numberofWords2 == 0 || searchedWord1 == ""){
+  if (numberofWords2 == 0){
     console.log("There are no submitted words, please try again")
-    return null;
+    return 0;
 
   } else{
 
